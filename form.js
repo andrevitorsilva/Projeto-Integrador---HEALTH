@@ -1,18 +1,21 @@
+/* Script relacionado as opçoes de exame*/
 
+/* Este é o script referente ao formulario do hemograma*/
 $(document).ready(function() {
   $('form').submit(function(event) {
     event.preventDefault();
     var nome = $('#nome').val();
-    var email = $('#email').val();
-    var telefone = $('#telefone').val();
-    var mensagem = $('#mensagem').val();
-    var tipoS = $('#tipoS').val();
+    var dataNasc = $('#dataNasc').val();
+    var cpf = $('#cpf').val();
+    var hemacias = $('#hemacias').val();
+    var hemoglobina = $('#hemoglobina').val();
 
     var dados = {
       nome: nome,
-      email: email,
-      telefone: telefone,
-      mensagem: mensagem
+      dataNasc: dataNasc,
+      cpf: cpf,
+      hemacias: hemacias,
+      hemoglobina: hemoglobina,
     };
 
     var qrCode = new QRCode(document.getElementById("qrcode"), {

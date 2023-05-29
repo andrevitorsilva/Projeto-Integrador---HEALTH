@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Formulário com QR Code</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="form.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#cpf').mask('000.000.000-00');5
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href="form.css">
+  </head>
+  <body>
+    <h1>Formulário com QR Code</h1>
+    <form id="formulario">
+      <label for="tipoEX">Tipo do Exame:</label>
+      <select name="exame" id="tipoEX">
+        <option value="hemograma">HEMOGRAMA</option>
+      </select>
+      </div>
+      <br> <br> 
+
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="dataNasc">Data de nascimento:</label>
+      <input type="date" id="dataNasc" name="dataNasc" required> 
+
+      <br> <br>
+
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" name="cpf" placeholder required="000.000.000-00" />
+
+      <label for="medico">Nome do medico:</label>
+      <input type="text" id="medico" name="medico" required>
+
+      <label for="metodo">Metodo:</label>
+      <input type="text" id="metodo" name="metodo" required>
+
+      <label for="data_coleta">Data da coleta do exame:</label>
+      <input type="date" id="data_coleta" name="data_coleta" required>
+      <br> <br>
+
+
+      <label for="hemacias">Hemacias:</label>
+      <input type="number" name="hemacias" id="hemacias" min="0" step="1" required>
+      <span>milhões/μL</span>
+      <br> <br>
+
+      <label for="hemoglobina">Hemogloblina:</label>
+      <input type="number" name="hemoglobina" id="hemoglobina" min="0" step="0.1" required>
+      <span>g/dL</span>
+      <br> <br>
+
+      <label for="hematocrito">Hematocrito:</label>
+      <input type="number" name="hematocrito" id="hematocrito" min="0" step="0.1" required>
+      <span>%</span>
+      <br> <br>
+
+      <label for="vcm">VCM:</label>
+      <input type="number" name="v_c_m" id="v_c_m" min="0" step="0.1" required>
+      <span>fL</span>
+
+      <label for="hcm">HCM:</label>
+      <input type="number" name="h_c_m" id="h_c_m" min="0" step="0.1" required>
+      <span>pg</span>
+
+      <br> <br>
+      <input type="submit" value="Enviar">
+    </form>
+
+    <div id="qrcode"></div>
+  </body>
+</html>
