@@ -1,3 +1,21 @@
+/* Funçao para conectar o banco de dados */
+/*
+const { Pool } = require('pg');
+const pool = new Pool({
+  user: 'postgres',
+  host: 'projeto.csxr7bnvb6ng.us-east-2.rds.amazonaws.com',
+  database: 'db_healthtime',
+  password: 'teste123',
+  port: 5432,
+});
+*/
+
+
+
+
+
+
+/*Funçao do login */
 function login() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
