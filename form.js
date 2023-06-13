@@ -1,3 +1,4 @@
+/* Função para mostrar o exame */
 
 $(document).ready(function() {
   $('form').submit(function(event) {

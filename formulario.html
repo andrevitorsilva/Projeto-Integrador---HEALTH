@@ -20,7 +20,6 @@
       <label for="tipoEX">Tipo do Exame:</label>
       <select name="exame" id="tipoEX">
         <option value="hemograma">HEMOGRAMA</option>
-        <option value="hemograma">Exame de sangue</option>
       </select>
       </div>
       <br> <br>
@@ -46,31 +45,60 @@
       <input type="date" id="data_coleta" name="data_coleta" required>
       <br> <br>
 
-
-      <label for="hemacias">Hemacias:</label>
+      <label for="hemacias">Hemacias (milhões/μL):</label>
       <input type="number" name="hemacias" id="hemacias" min="0" step="1" required>
-      <span>milhões/μL</span>
       <br> <br>
 
-      <label for="hemoglobina">Hemogloblina:</label>
+      <label for="hemoglobina">Hemogloblina (g/dL):</label>
       <input type="number" name="hemoglobina" id="hemoglobina" min="0" step="0.1" required>
-      <span>g/dL</span>
       <br> <br>
 
-      <label for="hematocrito">Hematocrito:</label>
+      <label for="hematocrito">Hematocrito (%):</label>
       <input type="number" name="hematocrito" id="hematocrito" min="0" step="0.1" required>
-      <span>%</span>
       <br> <br>
 
-      <label for="vcm">VCM:</label>
+      <label for="vcm">VCM (fL):</label>
       <input type="number" name="v_c_m" id="v_c_m" min="0" step="0.1" required>
-      <span>fL</span>
-
-      <label for="hcm">HCM:</label>
-      <input type="number" name="h_c_m" id="h_c_m" min="0" step="0.1" required>
-      <span>pg</span>
-
       <br> <br>
+      
+
+      <label for="hcm">HCM (pg):</label>
+      <input type="number" name="h_c_m" id="h_c_m" min="0" step="0.1" required>
+      <br> <br>
+
+      <label for="chcm">CHCM (g/dL):</label><br>
+      <input type="number" step="0.1" id="chcm" name="chcm" required>
+      <br><br>
+
+      <label for="rdw">RDW (%):</label><br>
+      <input type="number" step="0.1" id="rdw" name="rdw" required>
+      <br><br>
+
+      <label for="leucocitos">Leucócitos:</label><br>
+      <input type="number" id="leucocitos" name="leucocitos" required>
+      <br><br>
+
+      <label for="bastonetes">Bastonetes:</label><br>
+      <input type="number" id="bastonetes" name="bastonetes" required><br><br>
+
+      <label for="segmentados">Segmentados:</label><br>
+      <input type="number" id="segmentados" name="segmentados" required><br><br>
+
+      <label for="eosinofilos">Eosinófilos:</label><br>
+      <input type="number" id="eosinofilos" name="eosinofilos" required><br><br>
+
+      <label for="linfocitos">Linfócitos:</label><br>
+      <input type="number" id="linfocitos" name="linfocitos" required><br><br>
+
+      <label for="monocitos">Monócitos:</label><br>
+      <input type="number" id="monocitos" name="monocitos" required><br><br>
+
+      <label for="plaquetas">Plaquetas:</label><br>
+      <input type="number" id="plaquetas" name="plaquetas" required><br><br>
+
+      <label for="vpm">VPM (fL):</label><br>
+      <input type="number" step="0.1" id="vpm" name="vpm" required><br><br>
+
       <input type="submit" value="Enviar">
     </form>
 
