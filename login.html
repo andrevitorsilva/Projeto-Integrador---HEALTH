@@ -5,24 +5,27 @@
   <link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
-  <h2>Formulário de Login</h2>
+  <h1>Tela de Login</h1>
   
   <form>
-    <label for="username">Usuário:</label>
-    <input type="text" id="username" name="username" required><br><br>
+    <label for="nome_usuario">Usuário:</label>
+    <input type="text" id="nome_usuario" name="nome_usuario" required>
   
-    <label for="password">Senha:</label>
-    <input type="password" id="password" name="password" required><br><br>
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required>
   
-    <label for="birthdate">Data de Nascimento:</label>
-    <input type="date" id="birthdate" name="birthdate" required><br><br>
+    <label for="data_nascimento">Data de Nascimento:</label>
+    <input type="date" id="data_nascimento" name="data_nascimento" required> <br> <br>
   
     <label for="cpf">CPF:</label>
-    <input type="text" id="cpf" name="cpf" required><br><br>
+    <input type="text" id="cpf" name="cpf" required>
   
     <input type="button" value="Login" onclick="login()">
     <p>Não sou cadastrado. <a href="cadastro.html">Cadastrar</a></p>
   </form>
+
+
+  
 
   <script src="login.js"></script>
 </body>

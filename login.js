@@ -17,13 +17,13 @@ const pool = new Pool({
 
 /*Funçao do login */
 function login() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var birthdate = document.getElementById("birthdate").value;
+    var nome_usuario = document.getElementById("nome_usuario").value;
+    var senha = document.getElementById("senha").value;
+    var data_nascimento = document.getElementById("data_nascimento").value;
     var cpf = document.getElementById("cpf").value;
   
     // Verifica se o usuário, senha, data de nascimento e CPF estão preenchidos
-    if (username && password && birthdate && cpf) {
+    if (nome_usuario && senha && data_nascimento && cpf) {
       // Validação do CPF
       if (!validaCPF(cpf)) {
         alert("CPF inválido. Por favor, verifique.");
@@ -32,7 +32,7 @@ function login() {
   
       // Validação da data de nascimento
       var currentDate = new Date();
-      var selectedDate = new Date(birthdate);
+      var selectedDate = new Date(data_nascimento);
   
       if (selectedDate >= currentDate) {
         alert("Data de nascimento inválida. Por favor, verifique.");

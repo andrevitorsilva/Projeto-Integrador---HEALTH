@@ -15,6 +15,7 @@ form {
   padding: 20px;
   background-color: #ddebee;
   box-shadow: 0 0 10px rgba(168, 16, 16, 0.2);
+ 
 }
 
 label {
@@ -55,4 +56,26 @@ input[type="submit"]:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.Tcad {
+  background-color: #0804f5;
+  color: #b0f1ff;
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.Tcad:hover{
+  background-color: #0056b3;
+}
+
+.health img {
+  mix-blend-mode: multiply;
+  display: flex;
+  align-items: top;
+  justify-content: left;
 }
