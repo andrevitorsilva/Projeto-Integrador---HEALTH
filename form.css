@@ -59,23 +59,10 @@ input[type="submit"]:hover {
 }
 
 
-.Tcad {
-  background-color: #0804f5;
-  color: #b0f1ff;
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.Tcad:hover{
-  background-color: #0056b3;
-}
-
 .health img {
   mix-blend-mode: multiply;
   display: flex;
-  align-items: top;
-  justify-content: left;
+  position: absolute;
+  top: 0%;
+  left: 10px;
 }

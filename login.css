@@ -55,3 +55,11 @@ input[type="button"]:hover {
   background-color: #b0f1ff;
   color: #0e0f0f;
 }
+
+.health img {
+  mix-blend-mode: multiply;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  left: 10px;
+}

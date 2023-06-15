@@ -1,50 +1,67 @@
-/* Funçao para conectar o banco de dados */
-/*
-const { Pool } = require('pg');
-const pool = new Pool({
-  user: 'postgres',
-  host: 'projeto.csxr7bnvb6ng.us-east-2.rds.amazonaws.com',
-  database: 'db_healthtime',
-  password: 'teste123',
-  port: 5432,
-});
-*/
+
+document.getElementById('loginForm').addEventListener('submit', async function(event) {
+  event.preventDefault();
 
 
+    // Obtenha os valores dos campos de login
+    const nome_usuario = document.getElementById('nome_usuario').value;
+    const senha = document.getElementById('senha').value;
+    const cpf = document.getElementById('cpf').value;
+    const data_nascimento = document.getElementById('data_nascimento').value;
 
-
-
-
-/*Funçao do login */
-function login() {
-    var nome_usuario = document.getElementById("nome_usuario").value;
-    var senha = document.getElementById("senha").value;
-    var data_nascimento = document.getElementById("data_nascimento").value;
-    var cpf = document.getElementById("cpf").value;
-  
-    // Verifica se o usuário, senha, data de nascimento e CPF estão preenchidos
-    if (nome_usuario && senha && data_nascimento && cpf) {
-      // Validação do CPF
-      if (!validaCPF(cpf)) {
-        alert("CPF inválido. Por favor, verifique.");
-        return;
-      }
-  
-      // Validação da data de nascimento
-      var currentDate = new Date();
-      var selectedDate = new Date(data_nascimento);
-  
-      if (selectedDate >= currentDate) {
-        alert("Data de nascimento inválida. Por favor, verifique.");
-        return;
-      }
-  
-      // Redireciona para a página "formulario.html" após o login ser bem-sucedido
-      window.location.href = "formulario.html";
-    } else {
-      alert("Por favor, preencha todos os campos.");
+    const data = {
+      nome_usuario,
+      senha,
+      cpf,
+      data_nascimento,
     }
-  }
+
+    // Faça a requisição para a API de login
+
+    try {
+      const response = await fetch('http://192.168.0.252:3000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+  
+      // const result = await response.json();
+      if (response.ok) {
+        window.location.href = 'formulario.html';
+      } else {
+        // Cadastro falhou
+        limparCampos();
+      }
+    } catch (error) {
+      console.error('Erro :', error);
+    }
+  });
+    
+
+
+
+function limparCampos() {
+  document.getElementById('nome_usuario').value = '';
+  document.getElementById('senha').value = '';
+  document.getElementById('data_nascimento').value = '';
+  document.getElementById('cpf').value = '';
+}
+
+    /* $.ajax({
+      url: 'http://192.168.0.252:3000/login',
+      method: 'POST',
+      data: { nome_usuario, senha, cpf, data_nascimento },
+      success: function(response) {
+        window.location.href = '/formulario.html';
+      },
+      error: function(error) {
+        $('#error-message').text('Dados de login inválidos');
+      }
+    });
+  }); */
+
   
   function validaCPF(cpf) {
     function validaCPF(cpf) {
