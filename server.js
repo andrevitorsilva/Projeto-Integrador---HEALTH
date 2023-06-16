@@ -17,10 +17,10 @@ app.use(express.json());
 
 app.post('/cadastro', async (req, res) => {
   try {
-    const { nome_completo, nome_usuario, senha, data_nascimento, cpf, email } = req.body;
+    const { nome_usuario, razao_social, senha, cidade, estado, rua, bairro, cnpj, data_inclusao, laboratorio_ativo } = req.body;
 
-    const query = 'INSERT INTO usuario (nome_usuario, nome_completo, senha, data_nascimento, cpf, email) VALUES ($1, $2, $3, $4, $5, $6)';
-    const values = [nome_usuario, nome_completo, senha, data_nascimento, cpf, email];
+    const query = 'INSERT INTO laboratorio (nome_usuario, razao_social, senha, cidade, estado, rua, bairro, cnpj, data_inclusao, laboratorio_ativo) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)';
+    const values = [nome_usuario, razao_social, senha, cidade, estado, rua, bairro, cnpj, data_inclusao, laboratorio_ativo];
 
     await pool.query(query, values);
 
@@ -34,11 +34,11 @@ app.post('/cadastro', async (req, res) => {
 
 
 app.post('/login', async (req, res) => {
-  async function verificarCadastro(nome_usuario, senha, cpf, data_nascimento) {
+  async function verificarCadastro(nome_usuario, senha) {
     try {
       const query =
-        'SELECT * FROM usuario WHERE nome_usuario = $1 AND senha = $2 AND cpf = $3 AND data_nascimento = $4';
-      const values = [nome_usuario, senha, cpf, data_nascimento];
+        'SELECT * FROM laboratorio WHERE nome_usuario = $1 AND senha = $2 ';
+      const values = [nome_usuario, senha];
 
       const result = await pool.query(query, values);
 
@@ -49,9 +49,9 @@ app.post('/login', async (req, res) => {
     }
   }
 
-  const { nome_usuario, senha, cpf, data_nascimento } = req.body;
+  const { nome_usuario, senha } = req.body;
 
-  const isValid = await verificarCadastro(nome_usuario, senha, cpf, data_nascimento);
+  const isValid = await verificarCadastro(nome_usuario, senha);
 
   if (isValid) {
     res.sendFile(__dirname + '/formulario.html');

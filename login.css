@@ -40,7 +40,7 @@ input[type="password"] {
   color: #333;
 }
 
-input[type="button"] {
+input[type="submit"] {
   width: 100%;
   padding: 10px;
   background-color: #220afc;
@@ -51,7 +51,7 @@ input[type="button"] {
   border-radius: 4px;
 }
 
-input[type="button"]:hover {
+input[type="submit"]:hover {
   background-color: #b0f1ff;
   color: #0e0f0f;
 }
@@ -63,3 +63,8 @@ input[type="button"]:hover {
   top: 0%;
   left: 10px;
 }
+
+
+  p{
+    text-decoration: none;
+  }

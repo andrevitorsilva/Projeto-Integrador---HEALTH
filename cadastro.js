@@ -1,24 +1,37 @@
+
+
 document.getElementById('cadastroForm').addEventListener('submit', async function(event) {
   event.preventDefault();
 
   const nome_usuario = document.getElementById('nome_usuario').value;
-  const nome_completo = document.getElementById('nome_completo').value;
+  const razao_social = document.getElementById('razao_social').value;
   const senha = document.getElementById('senha').value;
-  const data_nascimento = document.getElementById('data_nascimento').value;
-  const cpf = document.getElementById('cpf').value;
-  const email = document.getElementById('email').value;
+  const cidade = document.getElementById('cidade').value;
+  const estado = document.getElementById('estado').value;
+  const rua = document.getElementById('rua').value;
+  const bairro = document.getElementById('bairro').value;
+  const cnpj = document.getElementById('cnpj').value;
+  const data_inclusao = document.getElementById('data_inclusao').value;
+  const laboratorio_ativo = document.getElementById('laboratorio_ativo').value;
+  
 
   const data = {
     nome_usuario,
-    nome_completo,
+    razao_social,
     senha,
-    data_nascimento,
-    cpf,
-    email,
+    cidade,
+    estado,
+    rua,
+    bairro,
+    cnpj,
+    data_inclusao,
+    laboratorio_ativo,
+  
+    
   };
 
   try {
-    const response = await fetch('http://192.168.0.252:3000/cadastro', {
+    const response = await fetch(' http://192.168.35.23:3000/cadastro', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -29,8 +42,8 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
     const result = await response.json();
     if (response.ok) {
       // Cadastro bem-sucedido
-      exibirMensagem('Usuário cadastrado com sucesso!', 'success');
-      limparCampos();
+      window.alert("Usuario foi Cadastrado!.");
+      window.location.href = 'login.html';
     } else {
       // Cadastro falhou
       exibirMensagem('Erro ao cadastrar o usuário.', 'error');
@@ -53,9 +66,14 @@ function exibirMensagem(mensagem, tipo) {
 
 function limparCampos() {
   document.getElementById('nome_usuario').value = '';
-  document.getElementById('nome_completo').value = '';
+  document.getElementById('razao_social')
   document.getElementById('senha').value = '';
-  document.getElementById('data_nascimento').value = '';
-  document.getElementById('cpf').value = '';
-  document.getElementById('email').value = '';
+  document.getElementById('cidade').value = '';
+  document.getElementById('estado').value = '';
+  document.getElementById('rua').value = '';
+  document.getElementById('bairro').value = '';
+  document.getElementById('cnpj').value = '';
+  document.getElementById('data_inclusao').value = '';
+  document.getElementById('laboratorio_ativo').value = '';
+
 }

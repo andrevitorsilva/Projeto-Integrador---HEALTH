@@ -41,18 +41,19 @@ body {
   }
   
   input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
     width: 100%;
+    padding: 10px;
+    background-color: #220afc;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
   }
   
   input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #b0f1ff;
+    color: #0e0f0f;
   }
   
   p {

@@ -6,20 +6,16 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     // Obtenha os valores dos campos de login
     const nome_usuario = document.getElementById('nome_usuario').value;
     const senha = document.getElementById('senha').value;
-    const cpf = document.getElementById('cpf').value;
-    const data_nascimento = document.getElementById('data_nascimento').value;
 
     const data = {
       nome_usuario,
       senha,
-      cpf,
-      data_nascimento,
     }
 
     // Faça a requisição para a API de login
 
     try {
-      const response = await fetch('http://192.168.0.252:3000/login', {
+      const response = await fetch('http://192.168.35.23:3000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -32,6 +28,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         window.location.href = 'formulario.html';
       } else {
         // Cadastro falhou
+        window.alert("Usuario nao cadastrado.");
         limparCampos();
       }
     } catch (error) {
@@ -45,8 +42,6 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
 function limparCampos() {
   document.getElementById('nome_usuario').value = '';
   document.getElementById('senha').value = '';
-  document.getElementById('data_nascimento').value = '';
-  document.getElementById('cpf').value = '';
 }
 
     /* $.ajax({
